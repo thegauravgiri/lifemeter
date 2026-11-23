@@ -4,7 +4,7 @@
 
 LifeMeter maps your life onto a single day. If you've lived 45% of the years you can expect, it's **10:54 AM in your life**, and most of your day is still ahead. It counts the time you have left in weeks, days, summers and the moments that matter, so you spend them on purpose.
 
-**Website:** [lifemeter.gauravgiri.com.np](https://lifemeter.gauravgiri.com.np) · [How it works](https://lifemeter.gauravgiri.com.np/how-it-works/) · [Privacy](https://lifemeter.gauravgiri.com.np/privacy/) · [Terms](https://lifemeter.gauravgiri.com.np/terms/) · [Help](https://lifemeter.gauravgiri.com.np/support/)
+**Website:** [lifemeter.gauravgiri.com.np](https://lifemeter.gauravgiri.com.np) · [How it works](https://lifemeter.gauravgiri.com.np/how-it-works/) · [Privacy](https://lifemeter.gauravgiri.com.np/privacy/) ([PRIVACY.md](PRIVACY.md)) · [Terms](https://lifemeter.gauravgiri.com.np/terms/) · [Help](https://lifemeter.gauravgiri.com.np/support/)
 
 <div align="center">
   <img src="screenshots/welcome.jpg" width="180" alt="Welcome screen: What time is it in your life?"/>
@@ -73,8 +73,8 @@ The app shows the result as a range ("around 2060–2067"), never a single date.
 
 The look is "Riso Morning", styled after two-colour risograph prints: Riso cobalt and fluorescent pink on cool paper, with a little print grain.
 
-- **Pink means now:** the sun, the logo's knob, this week, and the progress marker.
-- **Logo:** the Life Clock with one hand at 10:54 and a pink "now" knob where it points. Most of the day is still ahead. `tool/logo.py` generates every logo file.
+- **Pink means now:** the logo's heart, this week, and the progress marker.
+- **Logo:** the Life Clock with one hand at 10:54, pointing to a pink heart: now, spent on what you love. Most of the day is still ahead. `tool/logo.py` generates every logo file.
 - **Fonts:** [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders) for numbers, [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk) for text. Both are under the SIL Open Font License; the licence files are in `assets/fonts`.
 - **Icons:** [Phosphor](https://phosphoricons.com/) (MIT).
 - **Themes:** light by default; dark follows the system.

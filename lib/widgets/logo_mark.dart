@@ -44,6 +44,28 @@ class LogoPainter extends CustomPainter {
   static const dialR = 0.272;
   static const handW = 0.092;
   static const knobR = 0.105;
+
+  /// The heart that marks "now" (replaces a round knob). Same outline as
+  /// HEART_PATH in tool/logo.py, in unit space, scaled by [heartScale].
+  static const heartScale = knobR * 1.16;
+  static Path _heart(Offset c, double k) {
+    // Tilted so the point aims along the hand at the dial centre.
+    final co = math.cos(angle), si = math.sin(angle);
+    Offset p(double x, double y) =>
+        c + Offset((x * co - y * si) * k, (x * si + y * co) * k);
+    final a = p(0, 0.9);
+    final path = Path()..moveTo(a.dx, a.dy);
+    void cubic(Offset b, Offset d, Offset e) =>
+        path.cubicTo(b.dx, b.dy, d.dx, d.dy, e.dx, e.dy);
+    cubic(p(-0.6, 0.45), p(-1.0, 0.1), p(-1.0, -0.3));
+    cubic(p(-1.0, -0.7), p(-0.65, -0.95), p(-0.35, -0.95));
+    cubic(p(-0.15, -0.95), p(-0.03, -0.82), p(0.0, -0.65));
+    cubic(p(0.03, -0.82), p(0.15, -0.95), p(0.35, -0.95));
+    cubic(p(0.65, -0.95), p(1.0, -0.7), p(1.0, -0.3));
+    cubic(p(1.0, 0.1), p(0.6, 0.45), p(0.0, 0.9));
+    return path..close();
+  }
+
   static const gap = 0.029;
   static const knobAt = 1.07;
   static const overlap = 0.020;
@@ -87,8 +109,17 @@ class LogoPainter extends CustomPainter {
         ..strokeWidth = handW * s
         ..strokeCap = StrokeCap.round,
     );
-    canvas.drawCircle(knob, (knobR + gap) * s, cut);
-    canvas.drawCircle(knob, knobR * s, Paint()..color = LogoMark.pink);
+    final heart = _heart(knob, heartScale * s);
+    canvas.drawPath(heart, cut);
+    canvas.drawPath(
+      heart,
+      Paint()
+        ..color = tile
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2 * gap * s
+        ..strokeJoin = StrokeJoin.round,
+    );
+    canvas.drawPath(heart, Paint()..color = LogoMark.pink);
     if (!drawTile) canvas.restore();
   }
 
