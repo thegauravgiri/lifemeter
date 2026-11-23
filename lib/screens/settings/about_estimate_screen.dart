@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../data/countries.dart';
 import '../../data/lifestyle.dart';
+import '../../data/site.dart';
 import '../../models/profile.dart';
 import '../../state/life_controller.dart';
 import '../../theme/theme.dart';
@@ -80,14 +82,19 @@ class AboutEstimateScreen extends StatelessWidget {
           const SizedBox(height: LMSpace.xl),
           Text('Sources', style: t.title),
           const SizedBox(height: LMSpace.sm),
-          const _Source(
-            'Country & sex averages',
-            'UN World Population Prospects 2024',
-          ),
+          const _Source('Country & sex averages', lifeExpectancySource),
           for (final q in lifestyleQuestions) _Source(q.title, q.source),
           const _Source(
             'Life in weeks',
             'Inspired by Tim Urban, “Your Life in Weeks”, and Oliver Burkeman, “Four Thousand Weeks”',
+          ),
+          const SizedBox(height: LMSpace.md),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton(
+              onPressed: () => openSite(context, Site.method),
+              child: const Text('Read the full method online'),
+            ),
           ),
         ],
       ),

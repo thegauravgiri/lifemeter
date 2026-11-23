@@ -245,7 +245,7 @@ class _RevealStepState extends State<RevealStep>
             sun: p.accent,
             years: _s.estimate.expectedYears,
             badge: '${(f * 100).round()}% lived',
-            height: 72,
+            height: 88,
             animate: false,
           ),
           const SizedBox(height: 8),

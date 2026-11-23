@@ -4,6 +4,8 @@
 
 LifeMeter maps your life onto a single day. If you've lived 45% of the years you can expect, it's **10:54 AM in your life**, and most of your day is still ahead. It counts the time you have left in weeks, days, summers and the moments that matter, so you spend them on purpose.
 
+**Website:** [lifemeter.gauravgiri.com.np](https://lifemeter.gauravgiri.com.np) · [How it works](https://lifemeter.gauravgiri.com.np/how-it-works/) · [Privacy](https://lifemeter.gauravgiri.com.np/privacy/) · [Terms](https://lifemeter.gauravgiri.com.np/terms/) · [Help](https://lifemeter.gauravgiri.com.np/support/)
+
 <div align="center">
   <img src="screenshots/welcome.jpg" width="180" alt="Welcome screen: What time is it in your life?"/>
   <img src="screenshots/home-light.jpg" width="180" alt="Home: 10:54 AM in your life, with the life progress bar"/>
@@ -34,8 +36,9 @@ LifeMeter maps your life onto a single day. If you've lived 45% of the years you
   - **Life Clock:** the time in your life.
 
   The widgets resize down to two cells wide, so they fit side by side. They update on their own and follow light and dark mode.
+- **Quote of the day.** From [ZenQuotes](https://zenquotes.io/), fetched once a day; offline, a public-domain line about time.
 - **Quick onboarding.** About 30 seconds: birthday, country, sex, then the reveal. Your name and five optional health questions come after.
-- **Private.** No account and no servers. Everything stays on your device.
+- **Private.** No account, no servers, no ads and no tracking. Your answers stay on your device; the only network request is the daily quote.
 
 <p align="center">
   <img src="screenshots/tail-end.jpg" width="720" alt="The tail end: summers, weekends, full moons, books, New Year's Eves and sunrises"/>
@@ -48,7 +51,12 @@ LifeMeter maps your life onto a single day. If you've lived 45% of the years you
 
 ## How the estimate works
 
-1. **Baseline:** life expectancy at birth for your country and sex. The figures approximate the UN World Population Prospects 2024; see [`lib/data/countries.dart`](lib/data/countries.dart).
+1. **Baseline:** life expectancy at birth for your country and sex, for 217 countries and territories (2024). The figures come from the World Bank's [World Development Indicators](https://data.worldbank.org/indicator/SP.DYN.LE00.IN) (`SP.DYN.LE00.FE.IN`, `SP.DYN.LE00.MA.IN`), which take them from the UN's [World Population Prospects](https://population.un.org/wpp/); licence CC BY 4.0. [`lib/data/countries.dart`](lib/data/countries.dart) is generated; refresh it with:
+
+   ```sh
+   dart run tool/update_life_expectancy.dart
+   ```
+
 2. **Optional adjustments** for five habits with strong evidence, capped to a plausible range. See [`lib/data/lifestyle.dart`](lib/data/lifestyle.dart).
 
    | Habit | Source |
@@ -96,6 +104,16 @@ dart run flutter_launcher_icons
 ```
 
 The Android widgets are in `android/app/src/main/kotlin/com/example/lifemeter/`: `LifeWidgetProvider.kt` (countdown), `LifeWeeksWidgetProvider.kt` (life in weeks), `LifeClockWidgetProvider.kt`, and shared drawing in `WidgetArt.kt`. The app pushes only the birth and estimated-end timestamps, your one thing and the chosen unit through [`home_widget`](https://pub.dev/packages/home_widget). The widgets compute everything else themselves, so they stay current without the app open.
+
+## Website
+
+The pages at [lifemeter.gauravgiri.com.np](https://lifemeter.gauravgiri.com.np) (home, how it works, privacy policy, terms and help) are plain static files in [`site/`](site/), with a `CNAME` for GitHub Pages. Each page is a folder, so `/privacy` works on any static host. The app links to them from Settings, and share cards and share text carry the address. The app's URLs live in [`lib/data/site.dart`](lib/data/site.dart).
+
+## Credits
+
+- Life expectancy data: World Bank WDI / UN World Population Prospects (CC BY 4.0).
+- Inspirational quotes provided by [ZenQuotes API](https://zenquotes.io/).
+- Fonts: Big Shoulders Display and Schibsted Grotesk (SIL OFL). Icons: Phosphor (MIT).
 
 ## License
 

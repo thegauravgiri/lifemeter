@@ -171,15 +171,6 @@ Future<void> showAddBucketItem(BuildContext context) {
               hintStyle: t.title.copyWith(color: context.lm.inkMuted),
             ),
           ),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              for (final idea in intentionSuggestions)
-                if (!controller.bucket.any((i) => i.text == idea))
-                  SuggestionChip(label: idea, onTap: () => text.text = idea),
-            ],
-          ),
           const SizedBox(height: LMSpace.lg),
           PrimaryButton(
             label: 'Add to the list',

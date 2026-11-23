@@ -157,20 +157,6 @@ class _BucketListScreenState extends State<BucketListScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    if (items.isEmpty) ...[
-                      Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: [
-                          for (final idea in intentionSuggestions.take(4))
-                            SuggestionChip(
-                              label: idea,
-                              onTap: () => controller.addBucketItem(idea),
-                            ),
-                        ],
-                      ),
-                      const SizedBox(height: LMSpace.sm),
-                    ],
                     Row(
                       children: [
                         Expanded(

@@ -1,4 +1,4 @@
-package com.example.lifemeter
+package np.com.gauravgiri.lifemeter
 
 import android.app.WallpaperManager
 import android.content.ContentValues

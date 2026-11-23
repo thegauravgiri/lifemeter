@@ -632,7 +632,7 @@ class _WelcomeState extends State<_Welcome>
               const SizedBox(width: 6),
               Flexible(
                 child: Text(
-                  'Takes 30 seconds. Nothing leaves your phone.',
+                  'Takes 30 seconds. Your answers stay on your phone.',
                   style: t.caption.copyWith(color: p.onBrandMuted),
                 ),
               ),

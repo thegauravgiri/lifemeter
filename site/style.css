@@ -1,0 +1,45 @@
+/* LifeMeter site: "Riso Morning". Cobalt and fluoro pink on cool paper. */
+:root {
+  --paper: #F7F7FA; --surface: #FFFFFF; --ink: #15161D; --muted: #555867;
+  --line: #D9DCE8; --cobalt: #2340F5; --on-cobalt: #FFFFFF; --pink: #FF48B0;
+  --display: "Big Shoulders Display", "Arial Narrow", system-ui, sans-serif;
+  --body: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #0E0F16; --surface: #171925; --ink: #F1F1F5; --muted: #A9ABBE;
+          --line: #2A2D3D; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--body); }
+a { color: var(--cobalt); }
+@media (prefers-color-scheme: dark) { a { color: #8C9BFF; } }
+.wrap { max-width: 760px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+header.top { padding-block: 20px; }
+header.top .wrap { display: flex; align-items: center; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 20px; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--ink); text-decoration: underline; }
+.hero { background: var(--cobalt); color: var(--on-cobalt); padding-block: 56px 64px; }
+.hero h1 { font: 900 clamp(56px, 12vw, 112px)/0.92 var(--display); margin: 0 0 18px; letter-spacing: -0.01em; text-wrap: balance; }
+.hero p { max-width: 34em; margin: 0; font-size: 19px; color: rgba(255,255,255,.88); }
+.sun { display: inline-block; width: 64px; height: 32px; background: var(--pink); border-radius: 64px 64px 0 0; margin-bottom: 22px; box-shadow: 0 6px 0 -3px #fff; }
+.badge { display: inline-block; margin-top: 26px; background: #fff; color: var(--cobalt); font-weight: 700; padding: 12px 20px; border-radius: 999px; }
+main { padding-block: 40px 64px; }
+h1.page { font: 900 clamp(44px, 9vw, 72px)/1 var(--display); margin: 8px 0 8px; }
+h2 { font-size: 24px; line-height: 1.25; margin: 40px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 4px; }
+.muted { color: var(--muted); }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 32px 0; }
+.shots img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 0; list-style: none; }
+.features li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.features strong { display: block; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 10px 8px; vertical-align: top; }
+.note { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--pink); border-radius: 10px; padding: 14px 18px; }
+footer { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+footer a { color: var(--muted); }

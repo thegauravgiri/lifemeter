@@ -316,28 +316,16 @@ class LifestyleChoice extends StatelessWidget {
   }
 }
 
-/// Ideas for the one thing, offered as chips.
-const intentionSuggestions = [
-  'See the northern lights',
-  'Learn to surf',
-  'Write a book',
-  'Run a marathon',
-  'Visit Japan',
-  'Call Grandma more',
-];
-
-/// Free-text "one thing", with suggestion chips.
+/// Free-text "one thing".
 class IntentionField extends StatelessWidget {
   const IntentionField({
     super.key,
     required this.controller,
     this.autofocus = false,
-    this.suggestions = true,
   });
 
   final TextEditingController controller;
   final bool autofocus;
-  final bool suggestions;
 
   @override
   Widget build(BuildContext context) {
@@ -359,24 +347,6 @@ class IntentionField extends StatelessWidget {
             hintStyle: t.title.copyWith(color: context.lm.inkMuted),
           ),
         ),
-        if (suggestions) ...[
-          const SizedBox(height: LMSpace.sm),
-          ListenableBuilder(
-            listenable: controller,
-            builder: (context, _) => Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                for (final idea in intentionSuggestions)
-                  SuggestionChip(
-                    label: idea,
-                    selected: controller.text.trim() == idea,
-                    onTap: () => controller.text = idea,
-                  ),
-              ],
-            ),
-          ),
-        ],
       ],
     );
   }

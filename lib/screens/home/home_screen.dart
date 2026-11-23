@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/life_clock.dart';
+import '../../data/site.dart';
 import '../../models/life_estimate.dart';
 import '../../models/milestones.dart';
 import '../../services/widget_sync.dart';
+import '../../services/quote_service.dart';
 import '../../state/life_controller.dart';
 import '../../theme/icons.dart';
 import '../../theme/theme.dart';
@@ -117,6 +119,8 @@ class HomeScreen extends StatelessWidget {
                   _TailEnd(snapshot: s),
                 ],
                 const _WidgetPromo(),
+                const SizedBox(height: LMSpace.section),
+                const _DailyQuote(),
                 const SizedBox(height: LMSpace.section),
                 const _Footer(),
               ],
@@ -1161,6 +1165,57 @@ class _WidgetPromoState extends State<_WidgetPromo>
               Text('Or the weeks grid, in Settings.', style: t.caption),
             ],
           ),
+        );
+      },
+    );
+  }
+}
+
+/// Quote of the day (ZenQuotes, with a bundled fallback offline).
+class _DailyQuote extends StatefulWidget {
+  const _DailyQuote();
+
+  @override
+  State<_DailyQuote> createState() => _DailyQuoteState();
+}
+
+class _DailyQuoteState extends State<_DailyQuote> {
+  late final Future<Quote> _quote = QuoteService().today();
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.type;
+    final p = context.lm;
+    return FutureBuilder<Quote>(
+      future: _quote,
+      initialData: QuoteService.fallbackFor(DateTime.now()),
+      builder: (context, snap) {
+        final q = snap.data!;
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('For today', style: t.small),
+            const SizedBox(height: 10),
+            Text(
+              '“${q.text}”',
+              style: t.title.copyWith(fontSize: 24, height: 1.25),
+            ),
+            const SizedBox(height: 10),
+            Text('— ${q.author}', style: t.caption),
+            if (q.fromZenQuotes) ...[
+              const SizedBox(height: 6),
+              GestureDetector(
+                onTap: () => openSite(context, Uri.https('zenquotes.io', '/')),
+                child: Text(
+                  'Inspirational quotes provided by ZenQuotes API',
+                  style: t.small.copyWith(
+                    color: p.inkMuted,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ],
+          ],
         );
       },
     );

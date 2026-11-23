@@ -41,6 +41,8 @@ dependencies:
   home_widget: ^0.10.0
   intl: ^0.20.3
   share_plus: ^13.3.1
+  url_launcher: ^6.3.3
+  http: ^1.6.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

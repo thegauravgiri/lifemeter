@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/countries.dart';
+import '../../data/site.dart';
 import '../../services/widget_sync.dart';
 import '../../state/life_controller.dart';
 import '../../theme/icons.dart';
@@ -187,25 +188,24 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             _Row(
-              label: 'Privacy',
-              value: 'Everything stays on this device',
-              onTap: () => showDialog<void>(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('Your data stays here'),
-                  content: const Text(
-                    'LifeMeter has no account and no servers. Your answers are stored only on '
-                    'this device and are erased when you start over or uninstall. Share cards '
-                    'never include your birth date, country or health answers.',
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text('OK'),
-                    ),
-                  ],
-                ),
-              ),
+              label: 'Privacy policy',
+              value: 'Your answers stay on this device',
+              onTap: () => openSite(context, Site.privacy),
+            ),
+            _Row(
+              label: 'Terms of use',
+              value: Site.host,
+              onTap: () => openSite(context, Site.terms),
+            ),
+            _Row(
+              label: 'Help and feedback',
+              value: 'Questions, ideas and bug reports',
+              onTap: () => openSite(context, Site.support),
+            ),
+            _Row(
+              label: 'Website',
+              value: Site.host,
+              onTap: () => openSite(context, Site.home),
             ),
             _Row(
               label: 'Licences',

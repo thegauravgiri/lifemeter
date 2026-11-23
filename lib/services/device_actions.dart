@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../data/site.dart';
+
 /// Sharing, saving and wallpaper: things done with a rendered PNG. Nothing
 /// is uploaded; the system share sheet decides where an image goes.
 class DeviceActions {
@@ -9,7 +11,7 @@ class DeviceActions {
 
   static const _channel = MethodChannel('lifemeter/device');
 
-  static const shareText = 'What time is it in your life?';
+  static const shareText = 'What time is it in your life? ${Site.host}';
 
   bool get _android =>
       !kIsWeb && defaultTargetPlatform == TargetPlatform.android;

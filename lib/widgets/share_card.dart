@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/life_clock.dart';
 import '../models/life_estimate.dart';
 import '../models/milestones.dart';
+import '../data/site.dart';
 import '../theme/theme.dart';
 import 'controls.dart';
 import 'logo_mark.dart';
@@ -367,6 +368,11 @@ class ShareCard extends StatelessWidget {
             Text(
               'LifeMeter',
               style: context.type.title.copyWith(color: c.fg, fontSize: 19),
+            ),
+            const Spacer(),
+            Text(
+              Site.host,
+              style: context.type.small.copyWith(color: c.muted, fontSize: 14),
             ),
           ],
         ),

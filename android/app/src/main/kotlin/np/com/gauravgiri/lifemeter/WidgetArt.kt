@@ -1,4 +1,4 @@
-package com.example.lifemeter
+package np.com.gauravgiri.lifemeter
 
 import android.content.Context
 import android.graphics.Bitmap

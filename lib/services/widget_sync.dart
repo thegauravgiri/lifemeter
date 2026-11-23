@@ -11,9 +11,11 @@ enum HomeWidgetKind { clock, countdown, weeks }
 /// The widget computes "days left" natively from these timestamps, so it
 /// stays current without the app being opened.
 class WidgetSync {
-  static const _provider = 'com.example.lifemeter.LifeWidgetProvider';
-  static const _weeksProvider = 'com.example.lifemeter.LifeWeeksWidgetProvider';
-  static const _clockProvider = 'com.example.lifemeter.LifeClockWidgetProvider';
+  static const _provider = 'np.com.gauravgiri.lifemeter.LifeWidgetProvider';
+  static const _weeksProvider =
+      'np.com.gauravgiri.lifemeter.LifeWeeksWidgetProvider';
+  static const _clockProvider =
+      'np.com.gauravgiri.lifemeter.LifeClockWidgetProvider';
 
   bool get _supported =>
       !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
