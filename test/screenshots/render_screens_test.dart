@@ -35,7 +35,7 @@ const _phone = Size(390, 844);
 final _outDir = Directory('build/screens');
 
 final _profile = Profile(
-  name: 'Gaurav',
+  name: 'Alex',
   birthDate: DateTime(1995, 8, 15),
   countryCode: 'NP',
   sex: Sex.male,
@@ -201,7 +201,7 @@ void main() {
       await _settle(tester, 5500);
       await _shoot(tester, '05-reveal', b);
 
-      await tester.enterText(find.byType(TextField), 'Gaurav');
+      await tester.enterText(find.byType(TextField), 'Alex');
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await _settle(tester, 500);
       await tester.tap(find.text('Make them count'));
@@ -342,7 +342,7 @@ void main() {
     );
     final data = ShareData(
       snapshot: s,
-      name: 'Gaurav',
+      name: 'Alex',
       marked: c.memories.keys.toSet(),
       milestone: milestone,
       personLabel: 'Mum',
