@@ -1,43 +1,47 @@
 What time is it in your life?
 
-LifeMeter maps your life onto a single day. If you've lived 45% of the years you can expect, it's 10:54 AM in your life, and most of your day is still ahead. LifeMeter counts what's left in weeks, summers and the moments that matter, so you can spend them on purpose.
+If your life were a single day, what time would it be right now? If you've lived 45% of your expected years, it's 10:54 AM. Most of the day is still ahead, but the morning is gone, and it isn't coming back.
 
-It's a gentle wake-up call, not a countdown to dread: every week is a fresh box.
+LifeMeter turns the time you have left into something you can see: a clock, a grid of weeks, and the moments that matter. Not to scare you. To wake you up, gently, every time you look at your phone.
 
-★ YOUR LIFE CLOCK
-• Your life mapped onto a 24-hour day: "It's 10:54 AM in your life."
-• Weeks, days, hours and live seconds left, shown as a slideshow you can tap through
-• A bold progress bar of the life you've lived, with a pink "now" marker
+━━━━━━━━━━━━━━━━━━━━━
 
-★ YOUR LIFE IN WEEKS
-• Every week of your life as a square, one row per year, with this week marked
-• Add a short memory to any week and watch your life fill with colour
+YOUR LIFE CLOCK
+Your life mapped onto 24 hours. Watch it switch between the Life Clock and the weeks, days, hours and live seconds you have left, with a progress bar of the life you've already lived.
 
-★ MAKE IT COUNT
-• Your one thing: the one thing you most want to do, kept beside your count
-• A bucket list: tick things off as you live them, or pin one as your one thing
-• The tail end: how many summers, weekends, full moons, books and sunrises are ahead
-• Your people: "About 50 more visits with Mum". Time together, counted kindly
-• Milestones such as 10,000 days old, so you can celebrate them
+YOUR LIFE IN WEEKS
+Every week of your life as one small square, one row per year. The ones behind you are filled in. The ones ahead are blank. This week is pink. Add a memory to any week and watch your life fill with colour.
 
-★ KEEP IT IN SIGHT
-• Home-screen widgets: a countdown (slideshow or one unit), your life in weeks, and the Life Clock. They resize down to two cells, so they fit side by side
-• Set your life grid as your lock-screen wallpaper
-• A motivational quote every day
+THE TAIL END
+How many summers do you have left? Weekends? Full moons? Books, at five a year? Seeing it as a number changes how you spend the next one.
 
-★ SHARE IT
-• One tap turns your Life Clock, your weeks or a milestone into a card for your stories: "What time is it in your life?"
+YOUR PEOPLE
+"About 50 more visits with Mum." Add the people you love and see how much time together is left, counted kindly, with a nudge to plan the next visit.
 
-★ HONEST AND PRIVATE
-• Life expectancy for 217 countries from World Bank / UN World Population Prospects data, adjusted by five optional, evidence-based habits
-• Shown as a range, never a date, with the method and sources inside the app
-• No account, no ads, no tracking. Your answers stay on your phone
-• Light and dark themes
+YOUR ONE THING, AND A BUCKET LIST
+Name the one thing you'd regret not doing and keep it beside your count. Add everything else to a bucket list, and tick it off by living it.
 
-Set up in about 30 seconds: your birthday, your country, and you're in.
+KEEP IT IN SIGHT
+• Home-screen widgets: a countdown (as a slideshow or the unit you choose), your life in weeks, and the Life Clock. They fit side by side.
+• Your life grid as your lock-screen wallpaper.
+• A short motivational quote every day.
+• Milestones worth celebrating, like 10,000 days old.
 
-LifeMeter gives an estimate from population data. It is not a prediction and not medical advice.
+SHARE YOUR TIME
+One tap turns your Life Clock or your weeks into a story-ready card: "What time is it in your life?" Ask a friend.
 
-Inspired by Tim Urban's "Your Life in Weeks" and Oliver Burkeman's "Four Thousand Weeks".
+━━━━━━━━━━━━━━━━━━━━━
 
-Website: https://lifemeter.gauravgiri.com.np
+HONEST NUMBERS
+Your estimate starts from life expectancy for your country and sex: World Bank / UN data for 217 countries. Five optional, research-backed questions (smoking, activity, alcohol, weight, diet) refine it. You see a range, never a date, and the full method and sources are in the app.
+
+PRIVATE BY DESIGN
+No account. No ads. No tracking. Your answers stay on your phone, and you can erase everything from Settings.
+
+Set up in 30 seconds: your birthday, your country, and you'll see your time.
+
+Inspired by Tim Urban's "Your Life in Weeks" and Oliver Burkeman's "Four Thousand Weeks". A life calendar and memento mori for people who'd rather live than worry.
+
+LifeMeter shows an estimate from population data. It is not a prediction and not medical advice.
+
+lifemeter.gauravgiri.com.np
