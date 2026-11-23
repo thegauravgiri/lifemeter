@@ -380,4 +380,25 @@ void main() {
       }
     }
   });
+
+  // Google Play large-screen slots: unfolded 1:1 and 4:3, folded 10:16.
+  // Rendered from the real layout at each size (not stretched phone shots).
+  for (final (name, logical, ratio) in [
+    ('store-unfolded-1x1', const Size(840, 840), 2.0),
+    ('store-unfolded-4x3', const Size(1024, 768), 2.0),
+    ('store-folded-10x16', const Size(400, 640), 2.7),
+  ]) {
+    testWidgets('store $name', skip: !_render, (tester) async {
+      _size(tester, logical);
+      final c = await _controller(tester);
+      // Lead with the count of weeks left, the app's core message.
+      await tester.runAsync(() async {
+        await c.setSlideshow(false);
+        await c.setUnit(HeroUnit.weeks);
+      });
+      await tester.pumpWidget(_app(c, const HomeScreen(), Brightness.light));
+      await _settle(tester);
+      await _shoot(tester, name, null, ratio: ratio);
+    });
+  }
 }
