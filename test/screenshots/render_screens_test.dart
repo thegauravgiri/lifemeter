@@ -214,7 +214,7 @@ void main() {
 
       await tester.tap(find.text('Skip'));
       await _settle(tester);
-      await tester.tap(find.text('Visit Japan'));
+      await tester.enterText(find.byType(TextField), 'Visit Japan');
       await _settle(tester, 500);
       await _shoot(tester, '07-one-thing', b);
     });

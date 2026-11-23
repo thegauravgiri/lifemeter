@@ -16,11 +16,11 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_marginEnd="6dp"
             android:contentDescription="@null"
-            android:src="@drawable/ic_widget_sun" />
+            android:src="@drawable/ic_widget_mark" />
 
         <TextView
             android:layout_width="0dp"

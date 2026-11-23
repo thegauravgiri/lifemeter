@@ -369,17 +369,19 @@ class ShareCard extends StatelessWidget {
               'LifeMeter',
               style: context.type.title.copyWith(color: c.fg, fontSize: 19),
             ),
-            const Spacer(),
-            Text(
-              Site.host,
-              style: context.type.small.copyWith(color: c.muted, fontSize: 14),
-            ),
           ],
         ),
         const SizedBox(height: 10),
         Text(
           'What time is it in your life?',
           style: context.type.title.copyWith(color: c.fg, fontSize: 22),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          Site.host,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: context.type.small.copyWith(color: c.muted, fontSize: 15),
         ),
       ],
     );

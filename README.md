@@ -14,7 +14,7 @@ LifeMeter maps your life onto a single day. If you've lived 45% of the years you
 </div>
 
 <p align="center">
-  <img src="screenshots/widgets.jpg" width="420" alt="Life-in-weeks and countdown widgets side by side on an Android home screen"/>
+  <img src="screenshots/widgets.jpg" width="300" alt="Life-in-weeks and countdown widgets side by side on an Android home screen"/>
 </p>
 
 ## Features
@@ -73,8 +73,8 @@ The app shows the result as a range ("around 2060–2067"), never a single date.
 
 The look is "Riso Morning", styled after two-colour risograph prints: Riso cobalt and fluorescent pink on cool paper, with a little print grain.
 
-- **Pink means now:** the sun, this week, and the progress marker.
-- **Logo:** a pink sun rising on a horizon. It's still morning.
+- **Pink means now:** the sun, the logo's knob, this week, and the progress marker.
+- **Logo:** the Life Clock with one hand at 10:54 and a pink "now" knob where it points. Most of the day is still ahead. `tool/logo.py` generates every logo file.
 - **Fonts:** [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders) for numbers, [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk) for text. Both are under the SIL Open Font License; the licence files are in `assets/fonts`.
 - **Icons:** [Phosphor](https://phosphoricons.com/) (MIT).
 - **Themes:** light by default; dark follows the system.
@@ -97,9 +97,10 @@ flutter test
 flutter run
 ```
 
-Regenerate the launcher icons after editing `assets/images/logo*.png`:
+Regenerate the logo files and launcher icons after changing the mark in `tool/logo.py`:
 
 ```sh
+python3 tool/logo.py
 dart run flutter_launcher_icons
 ```
 

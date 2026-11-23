@@ -147,7 +147,7 @@ class SettingsScreen extends StatelessWidget {
           _Group('Widgets and lock screen', [
             _Row(
               label: 'Add the Life Clock widget',
-              value: '10:48 AM in your life, with the sun',
+              value: '10:48 AM in your life, at a glance',
               onTap: () =>
                   _addWidget(context, controller, HomeWidgetKind.clock),
             ),
