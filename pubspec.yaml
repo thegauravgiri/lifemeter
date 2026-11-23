@@ -1,5 +1,5 @@
 name: lifemeter
-description: "A new Flutter project."
+description: "LifeMeter — what time is it in your life?"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.1 <4.0.0'
+  sdk: '>=3.8.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,11 +38,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-
+  home_widget: ^0.10.0
+  intl: ^0.20.3
+  share_plus: ^13.3.1
+  url_launcher: ^6.3.3
+  http: ^1.6.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.13.1"
+  flutter_launcher_icons: ^0.14.4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -65,6 +69,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/fonts/BigShouldersDisplay-OFL.txt
+    - assets/fonts/SchibstedGrotesk-OFL.txt
+    - assets/fonts/Phosphor-LICENSE.txt
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -79,16 +86,28 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Fredoka
+    # Big Shoulders Display (OFL): poster numerals for the clock and counts.
+    - family: BigShoulders
       fonts:
-        - asset: assets/fonts/Fredoka.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/Montserrat.ttf
-        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+        - asset: assets/fonts/BigShouldersDisplay-800.ttf
+          weight: 800
+        - asset: assets/fonts/BigShouldersDisplay-900.ttf
           weight: 900
+    # Schibsted Grotesk (OFL): all UI text.
+    - family: Schibsted
+      fonts:
+        - asset: assets/fonts/SchibstedGrotesk-400.ttf
+        - asset: assets/fonts/SchibstedGrotesk-500.ttf
+          weight: 500
+        - asset: assets/fonts/SchibstedGrotesk-700.ttf
+          weight: 700
+    # Phosphor icons (MIT, see assets/fonts/Phosphor-LICENSE.txt).
+    - family: PhosphorBold
+      fonts:
+        - asset: assets/fonts/Phosphor-Bold.ttf
+    - family: PhosphorFill
+      fonts:
+        - asset: assets/fonts/Phosphor-Fill.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

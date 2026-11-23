@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Life Clock widget. Filled in by LifeClockWidgetProvider. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clock_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/clock_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Big Shoulders time, drawn as a white mask. -->
+        <ImageView
+            android:id="@+id/clock_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:tint="@color/lm_widget_number"
+            android:tintMode="src_in" />
+
+        <TextView
+            android:id="@+id/clock_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/widget_in_your_life"
+            android:textColor="@color/lm_widget_text"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/clock_arc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:tint="@color/lm_widget_lived"
+                android:tintMode="src_in" />
+
+            <ImageView
+                android:id="@+id/clock_sun"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:tint="@color/lm_widget_now"
+                android:tintMode="src_in" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/clock_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/widget_empty"
+        android:textColor="@color/lm_widget_text"
+        android:textSize="15sp"
+        android:visibility="gone" />
+</LinearLayout>

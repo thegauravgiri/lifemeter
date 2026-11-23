@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LifeMeter "Riso morning" light palette. Keep in sync with lib/theme/theme.dart (LMPalette.light). -->
+    <color name="lm_bg">#F7F7FA</color>
+    <!-- Countdown and Life Clock widgets: a cobalt tile with white type and a pink sun. -->
+    <color name="lm_widget_bg">#2340F5</color>
+    <color name="lm_widget_number">#FFFFFF</color>
+    <color name="lm_widget_text">#FFFFFF</color>
+    <color name="lm_widget_muted">#D1FFFFFF</color>
+    <color name="lm_widget_lived">#FFFFFF</color>
+    <color name="lm_widget_future">#3DFFFFFF</color>
+    <color name="lm_widget_now">#FF48B0</color>
+
+    <string name="app_name">LifeMeter</string>
+    <string name="widget_description">Your count and your one thing, always in sight.</string>
+    <string name="clock_widget_description">What time is it in your life? The Life Clock, with the sun on its arc.</string>
+    <string name="widget_in_your_life">in your life</string>
+    <string name="widget_bonus_time">bonus time</string>
+    <string name="widget_brand">LifeMeter</string>
+    <string name="widget_weeks_left">weeks left</string>
+    <string name="widget_bonus_weeks">bonus weeks</string>
+    <string name="widget_years_left">years left</string>
+    <string name="widget_days_left">days left</string>
+    <string name="widget_hours_left">hours left</string>
+    <string name="widget_countdown_left">hours : minutes : seconds left</string>
+    <string name="widget_countdown_short">h : m : s left</string>
+    <string name="weeks_widget_title_short">%1$s weeks left</string>
+    <string name="widget_percent_lived">%1$s%% lived</string>
+    <string name="widget_one_thing">One thing: %1$s</string>
+    <string name="weeks_widget_title">Your life in weeks</string>
+    <string name="weeks_widget_description">Every week of your life. This one in pink, and every week with a memory.</string>
+    <string name="weeks_widget_summary">week %1$s · %2$s left</string>
+    <string name="widget_empty">Open LifeMeter to start your count.</string>
+    <dimen name="lm_widget_radius">24dp</dimen>
+</resources>

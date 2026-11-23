@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sun arc for the Life Clock widget preview: the sun at 45%. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp" android:height="34dp"
+    android:viewportWidth="120" android:viewportHeight="34">
+    <path android:strokeColor="@color/lm_widget_future" android:strokeWidth="2"
+        android:pathData="M8,33 A52,26 0 0,1 112,33 M0,33 L120,33" />
+    <path android:strokeColor="@color/lm_widget_lived" android:strokeWidth="2" android:strokeLineCap="round"
+        android:pathData="M8,33 A52,26 0 0,1 52,7.4" />
+    <path android:fillColor="@color/lm_widget_now"
+        android:pathData="M52,7.4 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" />
+</vector>

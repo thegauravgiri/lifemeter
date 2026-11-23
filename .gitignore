@@ -47,3 +47,5 @@ app.*.map.json
 
 # vscode
 .vscode
+# Local Claude preferences
+.claude/*.local.md
