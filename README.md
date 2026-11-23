@@ -1,43 +1,105 @@
 # LifeMeter
 
-LifeMeter is a simple yet powerful app designed to help you understand and visualize your life expectancy. By providing your date of birth and selecting your country, LifeMeter calculates and presents your remaining life span in an intuitive and engaging way.
+**What time is it in your life?**
+
+LifeMeter maps your life onto a single day. If you've lived 45% of the years you can expect, it's **10:54 AM in your life**, and most of your day is still ahead. It counts the time you have left in weeks, days, summers and the moments that matter, so you spend them on purpose.
+
+<div align="center">
+  <img src="screenshots/welcome.jpg" width="180" alt="Welcome screen: What time is it in your life?"/>
+  <img src="screenshots/home-light.jpg" width="180" alt="Home: 10:54 AM in your life, with the life progress bar"/>
+  <img src="screenshots/home-dark.jpg" width="180" alt="Home in dark mode"/>
+  <img src="screenshots/share-card.jpg" width="180" alt="Share card for stories"/>
+</div>
+
+<p align="center">
+  <img src="screenshots/widgets.jpg" width="420" alt="Life-in-weeks and countdown widgets side by side on an Android home screen"/>
+</p>
 
 ## Features
 
-- **Remaining Days:** LifeMeter calculates the number of days you have left based on the average life expectancy for your country.
-  
-- **Life Progress Bar:** Visualize your life journey with an interactive progress bar comparing your current age to the average life expectancy.
+- **Life Clock.** Your life mapped onto a 24-hour day: "It's 10:54 AM in your life."
+- **Time slideshow.** The home screen rotates through Life Clock, weeks, days, hours, live seconds, summers and % lived. Tap to skip, or turn it off in Settings.
+- **Life progress bar.** A bold bar of life lived, with a glowing "now" marker, a "% lived" badge and a tick for every decade.
+- **Your one thing.** The one thing you most want to do, beside your count. Mark it done and pick the next.
+- **Bucket list.** Everything else you want to do. Tick items off, swipe to delete (with undo), or pin one as your one thing.
+- **Life in weeks.** Every week of your life as a square, one row per year. Add a short memory to any week and it turns pink.
+- **The tail end.** What's ahead in moments: summers, weekends, full moons, books, New Year's Eves and sunrises, each on its own illustrated card.
+- **Your people.** "About 50 more visits with Mum", from their age and how often you see them.
+- **Milestones.** For example "12,500 days old in 41 days", each with a share card.
+- **Share cards.** One tap makes a 9:16 image for stories: your Life Clock, life in weeks, a milestone or a person.
+- **Lock-screen wallpaper.** Sets your life grid and Life Clock as the lock screen.
+- **Android widgets.**
+  - **Countdown:** a slideshow of Life Clock, years, weeks, days, hours and a live seconds countdown, or one unit of your choice. Includes the progress bar and your one thing.
+  - **Life in weeks:** the whole grid, with this week marked.
+  - **Life Clock:** the time in your life.
 
-- **Remaining Time:** Get a detailed breakdown of your remaining time in months, weeks, and hours.
+  The widgets resize down to two cells wide, so they fit side by side. They update on their own and follow light and dark mode.
+- **Quick onboarding.** About 30 seconds: birthday, country, sex, then the reveal. Your name and five optional health questions come after.
+- **Private.** No account and no servers. Everything stays on your device.
 
-## Screenshots
+<p align="center">
+  <img src="screenshots/tail-end.jpg" width="720" alt="The tail end: summers, weekends, full moons, books, New Year's Eves and sunrises"/>
+</p>
 
 <div align="center">
-  <img src="screenshots/screenshot1.jpg" width="200"/>
-  <img src="screenshots/screenshot2.jpg" width="200"/>
-  <img src="screenshots/screenshot3.jpg" width="200"/>
-  <img src="screenshots/screenshot4.jpg" width="200"/>
-  <img src="screenshots/screenshot5.jpg" width="200"/>
+  <img src="screenshots/reveal.jpg" width="180" alt="The reveal after onboarding"/>
+  <img src="screenshots/bucket-list.jpg" width="180" alt="Bucket list"/>
 </div>
 
-## Installation
+## How the estimate works
 
-To use LifeMeter, simply download the latest version from the [Releases](https://github.com/gaurovgiri/lifemeter/releases) page and install it on your Android device.
+1. **Baseline:** life expectancy at birth for your country and sex. The figures approximate the UN World Population Prospects 2024; see [`lib/data/countries.dart`](lib/data/countries.dart).
+2. **Optional adjustments** for five habits with strong evidence, capped to a plausible range. See [`lib/data/lifestyle.dart`](lib/data/lifestyle.dart).
 
-## Usage
+   | Habit | Source |
+   |---|---|
+   | Smoking | Jha et al., NEJM 2013 |
+   | Physical activity | Moore et al., PLOS Medicine 2012 |
+   | Alcohol | Wood et al., The Lancet 2018 |
+   | Body weight | Prospective Studies Collaboration, The Lancet 2009 |
+   | Diet | Fadnes et al., PLOS Medicine 2022 |
 
-1. Launch the LifeMeter app.
-2. Select your country.
-3. Enter your date of birth.
-4. Explore your remaining life span and gain insights into your life expectancy.
+The app shows the result as a range ("around 2060–2067"), never a single date. It's a population estimate, not a prediction and not medical advice, and the app says so wherever the number appears.
 
-## Contributing
+## Design
 
-Contributions are welcome! If you have any ideas for new features or improvements, feel free to open an issue or submit a pull request.
+The look is "Riso Morning", styled after two-colour risograph prints: Riso cobalt and fluorescent pink on cool paper, with a little print grain.
+
+- **Pink means now:** the sun, this week, and the progress marker.
+- **Logo:** a pink sun rising on a horizon. It's still morning.
+- **Fonts:** [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders) for numbers, [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk) for text. Both are under the SIL Open Font License; the licence files are in `assets/fonts`.
+- **Icons:** [Phosphor](https://phosphoricons.com/) (MIT).
+- **Themes:** light by default; dark follows the system.
+
+The design tokens live in [`lib/theme/theme.dart`](lib/theme/theme.dart). The widgets mirror them in `android/app/src/main/res/values*/lifemeter*.xml`.
+
+To review the UI without a device, render every key screen, light and dark, to `build/screens/`:
+
+```sh
+flutter test test/screenshots/render_screens_test.dart --dart-define=RENDER=true
+```
+
+## Development
+
+Requires Flutter 3.44 or later (see `.fvmrc`).
+
+```sh
+flutter pub get
+flutter test
+flutter run
+```
+
+Regenerate the launcher icons after editing `assets/images/logo*.png`:
+
+```sh
+dart run flutter_launcher_icons
+```
+
+The Android widgets are in `android/app/src/main/kotlin/com/example/lifemeter/`: `LifeWidgetProvider.kt` (countdown), `LifeWeeksWidgetProvider.kt` (life in weeks), `LifeClockWidgetProvider.kt`, and shared drawing in `WidgetArt.kt`. The app pushes only the birth and estimated-end timestamps, your one thing and the chosen unit through [`home_widget`](https://pub.dev/packages/home_widget). The widgets compute everything else themselves, so they stay current without the app open.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+[MIT](LICENSE)
 
 ## Contact
 

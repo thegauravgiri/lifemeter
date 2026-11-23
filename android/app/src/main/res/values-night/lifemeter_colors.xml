@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LifeMeter "Riso morning" dark palette. Keep in sync with lib/theme/theme.dart (LMPalette.dark). -->
+    <color name="lm_bg">#0F1014</color>
+    <!-- The cobalt tile stays saturated at night: a bold slab on charcoal. -->
+    <color name="lm_widget_bg">#2340F5</color>
+    <color name="lm_widget_number">#FFFFFF</color>
+    <color name="lm_widget_text">#FFFFFF</color>
+    <color name="lm_widget_muted">#D1FFFFFF</color>
+    <color name="lm_widget_lived">#FFFFFF</color>
+    <color name="lm_widget_future">#3DFFFFFF</color>
+    <color name="lm_widget_now">#FF5CB8</color>
+</resources>

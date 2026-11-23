@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- "Set as lock screen" (a normal permission, granted at install). -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <application
-        android:label="lifemeter"
+        android:label="@string/app_name"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
@@ -25,6 +27,39 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- Home-screen widget -->
+        <receiver
+            android:name=".LifeWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/life_widget_info" />
+        </receiver>
+        <!-- Life Clock widget -->
+        <receiver
+            android:name=".LifeClockWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/life_clock_widget_info" />
+        </receiver>
+        <!-- Life-in-weeks widget -->
+        <receiver
+            android:name=".LifeWeeksWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/weeks_widget_info" />
+        </receiver>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

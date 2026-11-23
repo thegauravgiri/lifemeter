@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sample life progress bar (45% lived) for the widget picker preview. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp" android:height="26dp"
+    android:viewportWidth="400.0" android:viewportHeight="26.0">
+    <!-- Track -->
+    <path android:fillColor="@color/lm_widget_future"
+        android:pathData="M6,7h388a6,6 0 0 1 0,12h-388a6,6 0 0 1 0,-12z" />
+    <!-- Lived -->
+    <path android:fillColor="@color/lm_widget_lived"
+        android:pathData="M6,7h174a6,6 0 0 1 0,12h-174a6,6 0 0 1 0,-12z" />
+    <!-- Knob ring -->
+    <path android:fillColor="@color/lm_widget_lived"
+        android:pathData="M174,0h12a0,0 0 0 1 0,0v26a0,0 0 0 1 0,0h-12z" />
+    <!-- Now -->
+    <path android:fillColor="@color/lm_widget_now"
+        android:pathData="M180,2a4,4 0 0 1 4,4v14a4,4 0 0 1 -8,0v-14a4,4 0 0 1 4,-4z" />
+</vector>

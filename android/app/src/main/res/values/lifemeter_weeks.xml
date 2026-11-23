@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light. Life-in-weeks widget; mirrors lib/widgets/weeks_grid.dart. -->
+    <color name="lm_weeks_bg">#F7F7FA</color>
+    <color name="lm_weeks_text">#15161D</color>
+    <color name="lm_weeks_muted">#555867</color>
+    <color name="lm_weeks_lived">#2340F5</color>
+    <color name="lm_weeks_future">#DDE1F3</color>
+    <color name="lm_weeks_marked">#FF48B0</color>
+    <color name="lm_weeks_now">#FF48B0</color>
+</resources>

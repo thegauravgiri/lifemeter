@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static preview shown in the widget picker (Android 12+). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_widget_sun" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/widget_brand"
+            android:textColor="@color/lm_widget_muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="45% lived"
+            android:textColor="@color/lm_widget_muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text="1,957"
+        android:textColor="@color/lm_widget_number"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/widget_weeks_left"
+        android:textColor="@color/lm_widget_text"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/widget_preview_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:text="One thing: See the northern lights"
+        android:textColor="@color/lm_widget_text"
+        android:textSize="14sp" />
+</LinearLayout>

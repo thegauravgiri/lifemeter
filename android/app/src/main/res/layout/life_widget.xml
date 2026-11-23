@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget. Values are filled in by LifeWidgetProvider. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_widget_sun" />
+
+            <TextView
+                android:id="@+id/brand_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:text="@string/widget_brand"
+                android:textColor="@color/lm_widget_muted"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text=""
+                android:textColor="@color/lm_widget_muted"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- A single view: one count. -->
+        <LinearLayout
+            android:id="@+id/single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <!-- Big Shoulders number, drawn as a white mask and tinted per light/dark mode. -->
+            <ImageView
+                android:id="@+id/weeks_left"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="fitStart"
+                android:tint="@color/lm_widget_number"
+                android:tintMode="src_in" />
+
+            <!-- "Seconds" unit: the system ticks this every second, no app needed. -->
+            <Chronometer
+                android:id="@+id/countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:countDown="true"
+                android:fontFamily="sans-serif-black"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/lm_widget_number"
+                android:textSize="34sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:text="@string/widget_weeks_left"
+                android:textColor="@color/lm_widget_text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Slideshow: the system flips these every 4 s, no app needed. -->
+        <ViewFlipper
+            android:id="@+id/slides"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autoStart="true"
+            android:flipInterval="4000"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/slide_clock_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:scaleType="fitStart"
+                    android:contentDescription="@null"
+                    android:tint="@color/lm_widget_number"
+                    android:tintMode="src_in" />
+
+                <TextView
+                    android:id="@+id/slide_clock_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/slide_years_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:scaleType="fitStart"
+                    android:contentDescription="@null"
+                    android:tint="@color/lm_widget_number"
+                    android:tintMode="src_in" />
+
+                <TextView
+                    android:id="@+id/slide_years_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/slide_weeks_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:scaleType="fitStart"
+                    android:contentDescription="@null"
+                    android:tint="@color/lm_widget_number"
+                    android:tintMode="src_in" />
+
+                <TextView
+                    android:id="@+id/slide_weeks_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/slide_days_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:scaleType="fitStart"
+                    android:contentDescription="@null"
+                    android:tint="@color/lm_widget_number"
+                    android:tintMode="src_in" />
+
+                <TextView
+                    android:id="@+id/slide_days_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/slide_hours_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:scaleType="fitStart"
+                    android:contentDescription="@null"
+                    android:tint="@color/lm_widget_number"
+                    android:tintMode="src_in" />
+
+                <TextView
+                    android:id="@+id/slide_hours_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Chronometer
+                    android:id="@+id/slide_seconds_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:countDown="true"
+                    android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_number"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/slide_seconds_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:textColor="@color/lm_widget_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ViewFlipper>
+
+        <!-- Life progress: track, fill and "now" knob as white masks, tinted so they follow light/dark mode. -->
+        <FrameLayout
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/progress_track"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:tint="@color/lm_widget_future"
+                android:tintMode="src_in" />
+
+            <ImageView
+                android:id="@+id/progress_fill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:tint="@color/lm_widget_lived"
+                android:tintMode="src_in" />
+
+            <ImageView
+                android:id="@+id/progress_knob"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:tint="@color/lm_widget_now"
+                android:tintMode="src_in" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/intention"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/lm_widget_text"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/widget_empty"
+        android:textColor="@color/lm_widget_text"
+        android:textSize="15sp"
+        android:visibility="gone" />
+</LinearLayout>

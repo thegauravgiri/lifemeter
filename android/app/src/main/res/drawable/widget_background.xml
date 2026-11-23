@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Opaque, so contrast holds on any wallpaper. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/lm_widget_bg" />
+    <corners android:radius="@dimen/lm_widget_radius" />
+</shape>
