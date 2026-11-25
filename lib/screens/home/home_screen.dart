@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -47,6 +48,9 @@ ShareData shareDataFor(LifeController c, DateTime now) {
   );
 }
 
+/// Widest the home column gets on large screens.
+const double _maxContentWidth = 720;
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -79,16 +83,14 @@ class HomeScreen extends StatelessWidget {
     final milestone = nextMilestone(controller.estimate!, now);
     final showMilestone =
         milestone != null && milestone.daysFrom(now) <= milestoneLeadDays;
+    // On tablets and unfolded foldables, keep a readable centred column.
+    final width = MediaQuery.sizeOf(context).width;
+    final side = math.max(LMSpace.gutter, (width - _maxContentWidth) / 2);
     return CustomScrollView(
       slivers: [
         SliverSafeArea(
           sliver: SliverPadding(
-            padding: const EdgeInsets.fromLTRB(
-              LMSpace.gutter,
-              0,
-              LMSpace.gutter,
-              LMSpace.xxl,
-            ),
+            padding: EdgeInsets.fromLTRB(side, 0, side, LMSpace.xxl),
             sliver: SliverList.list(
               children: [
                 const _TopBar(),
